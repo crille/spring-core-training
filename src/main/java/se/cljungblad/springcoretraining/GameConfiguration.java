@@ -8,7 +8,7 @@ public class GameConfiguration {
 
     @Bean
     public Game game() {
-        System.out.println("Inside GameConfiguration game() method");
+        System.out.println("GameConfiguration game() @Bean creation");
         Game game = new Game();
         game.setName("KindCraft");
         return game;

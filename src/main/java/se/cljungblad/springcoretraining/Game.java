@@ -13,33 +13,35 @@ public class Game implements InitializingBean, DisposableBean {
     private List<String> orderedList = new ArrayList<>();
     private String name;
 
+    private static String className = Game.class.getSimpleName();
+
     public Game() {
-        System.out.println("1 - Game constructor");
+        System.out.println(className + " constructor");
     }
 
     @PostConstruct
     public void init() {
-        System.out.println("2 - Post construct");
+        System.out.println(className + " Post construct");
     }
 
     public void setName(String name) {
-        System.out.println("3 - Setter method");
+        System.out.println(className + " Setter method");
         this.name = name;
     }
 
     @PreDestroy
     public void preDestroy() {
-        System.out.println("4 - PreDestroy");
+        System.out.println(className + " PreDestroy");
     }
 
     @Override
     public void destroy() {
-        System.out.println("5 - Destroy - DisposableBean");
+        System.out.println(className + " Destroy - DisposableBean");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("3 - afterPropertiesSet - InitializationBean");
+        System.out.println(className + " afterPropertiesSet - InitializationBean");
     }
 
     public List<String> getOrderedList() {
