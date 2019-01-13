@@ -15,6 +15,8 @@ public class SpringCoreTrainingApplication {
 
 		SpringConfiguration config = ctx.getBean(SpringConfiguration.class);
 
+		//To test different profiles, change profile in application.properties and run to see different outputs
+
 		System.out.println(config.getDbUsername());
 		System.out.println(config.getDbPassword());
 
